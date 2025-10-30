@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3 - Calculadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="num1">
+                    Primeiro Número
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="num1" required>
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="num2">
+                    Segundo Número
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="num2" required>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Calcular">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os elementos de input
+            let num1Input = document.getElementById("num1");
+            let num2Input = document.getElementById("num2");
+            
+            // Acessa o conteúdo e converte para número
+            let num1 = parseFloat(num1Input.value);
+            let num2 = parseFloat(num2Input.value);
+
+            // Calcula as operações
+            let soma = num1 + num2;
+            let subtracao = num1 - num2;
+            let multiplicacao = num1 * num2;
+            let divisao = num1 / num2;
+
+            // Remove o formulário
+            document.getElementById("meuForm").remove();
+
+            // Adiciona o resultado na tela
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
+                <h1 class='font-bold text-xl mb-3'>Resultados</h1>
+                <p>Soma: <strong>${soma}</strong></p>
+                <p>Subtração: <strong>${subtracao}</strong></p>
+                <p>Multiplicação: <strong>${multiplicacao}</strong></p>
+                <p>Divisão: <strong>${divisao.toFixed(2)}</strong></p>
+            </div>
+            `;
+        });
+    </script>
+</body>
+</html>
