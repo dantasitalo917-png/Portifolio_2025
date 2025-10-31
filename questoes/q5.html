@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Temperatura</title>
+    <title>questão 5 - Temperatura</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -30,14 +30,14 @@
         document.getElementById("meuForm").addEventListener("submit", function (e){
             e.preventDefault();
 
-            // Captura o valor em Celsius
+            // celsius
             let celsiusInput = document.getElementById("cel");
             let celsius = parseFloat(celsiusInput.value);
 
-            // Converte para Fahrenheit
+            // Convertendo para fahrenheit
             let fahrenheit = celsius * 9 / 5 + 32;
 
-            // Exibe o resultado formatado
+            // Estou exbindo o resultado
             document.getElementById("main").innerHTML = `
                 <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
                     <h1 class='font-bold text-xl mb-3'>Conversão de Temperatura</h1>
