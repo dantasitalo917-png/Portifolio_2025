@@ -36,13 +36,13 @@
             let raio = parseFloat(raioInput.value);
 
             // Define o valor de PI e calcula
-            const PI = 3.14159;
+            const PI = 3.14;
             let area = PI * (raio * raio);
             let perimetro = 2 * PI * raio;
 
             // Remove o formulário
             document.getElementById("meuForm").remove();
-
+            
             // Adiciona o resultado na tela
             document.getElementById("main").innerHTML = `
             <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
