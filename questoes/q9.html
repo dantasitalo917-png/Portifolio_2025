@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 9 - Comparar Números</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="num1">
+                    Primeiro Número
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="num1" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="num2">
+                    Segundo Número
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="num2" required>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Verificar">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os inputs
+            let num1Input = document.getElementById("num1");
+            let num2Input = document.getElementById("num2");
+            
+            // Acessa e converte os valores
+            let num1 = parseFloat(num1Input.value);
+            let num2 = parseFloat(num2Input.value);
+
+            let resultado;
+            // Compara os números
+            if (num1 > num2) {
+                resultado = `Sim, ${num1} é maior que ${num2}.`;
+            } else {
+                resultado = `Não, ${num1} não é maior que ${num2}.`;
+            }
+
+            // Remove o formulário
+            document.getElementById("meuForm").remove();
+
+            // Adiciona o resultado
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-center'>
+                <h1 class='font-bold text-xl mb-3'>Resultado</h1>
+                <p>${resultado}</p>
+            </div>
+            `;
+        });
+    </script>
+</body>
+</html>

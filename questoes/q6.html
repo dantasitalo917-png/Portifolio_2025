@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 6 - Salário Anual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="salario">
+                    Salário Mensal (R$)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="salario" step="0.01" required>
+            </div>
+             <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="meses">
+                    Meses Trabalhados
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="meses" value="12" required>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Calcular">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os inputs
+            let salarioInput = document.getElementById("salario");
+            let mesesInput = document.getElementById("meses");
+            
+            // Acessa os valores
+            let salario = parseFloat(salarioInput.value);
+            let meses = parseInt(mesesInput.value);
+
+            // Calcula o salário anual
+            let salarioAnual = salario * meses;
+
+            // Remove o formulário
+            document.getElementById("meuForm").remove();
+
+            // Adiciona o resultado
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
+                <h1 class='font-bold text-xl mb-3'>Salário Anual</h1>
+                <p>O seu salário anual é de <strong>R$ ${salarioAnual.toFixed(2)}</strong></p>
+            </div>
+            `;
+        });
+    </script>
+</body>
+</html>
