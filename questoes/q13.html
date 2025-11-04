@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão - Média de Notas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nota1">
+                    Primeira Nota
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="number" name="nota1" id="nota1" step="0.1" min="0" max="10">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nota2">
+                    Segunda Nota
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="number" name="nota2" id="nota2" step="0.1" min="0" max="10">
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Calcular Média">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            // Previne o comportamento padrão de recarregar a página
+            e.preventDefault();
+
+            // Recuperar os elementos de input do HTML
+            let nota1Input = document.getElementById("nota1");
+            let nota2Input = document.getElementById("nota2");
+            
+            // Acessa o conteúdo (valor) e converte para número
+            let nota1 = parseFloat(nota1Input.value);
+            let nota2 = parseFloat(nota2Input.value);
+            
+            // Calcula a média simples
+            let media = (nota1 + nota2) / 2;
+
+            // Remove o formulário da tela
+            document.getElementById("meuForm").remove();
+
+            // Resultado
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-center'>
+                <h1 class='font-bold text-xl mb-3'> 
+                    Média Final
+                </h1>
+                <p>A sua média final é: <strong>${media.toFixed(1)}</strong></p>
+            </div>
+            `;
+        })
+    </script>
+</body>
+</html>

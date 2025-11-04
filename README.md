@@ -19,3 +19,7 @@
 10: Escreva um programa que solicite ao usuário a sua idade e verifique se ele é maior de idade (idade igual ou superior a 18 anos). Imprima uma mensagem informando o resultado.
 
 11: Crie uma página web que solicite um número e mostre em uma lista numerada todos os números pares de 0 até o número lido utilizando um loop "for".
+
+12: Crie um programa que peça ao usuário a largura e a altura de um retângulo, utilizando dois campos de número. Ao clicar em um botão "Calcular", o formulário deve desaparecer e o programa deve mostrar o resultado da área calculada (Área = Largura * Altura) em uma mensagem na tela.
+
+13: Escreva um programa que peça ao usuário para inserir duas notas (de 0 a 10) em campos separados. Após o envio, o formulário deve ser removido, e a página deve exibir a média simples entre as duas notas em uma mensagem formatada (ex: "A sua média final é: 8.5").
