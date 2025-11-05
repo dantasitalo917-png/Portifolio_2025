@@ -23,3 +23,5 @@
 12: Crie um programa que peça ao usuário a largura e a altura de um retângulo, utilizando dois campos de número. Ao clicar em um botão "Calcular", o formulário deve desaparecer e o programa deve mostrar o resultado da área calculada (Área = Largura * Altura) em uma mensagem na tela.
 
 13: Escreva um programa que peça ao usuário para inserir duas notas (de 0 a 10) em campos separados. Após o envio, o formulário deve ser removido, e a página deve exibir a média simples entre as duas notas em uma mensagem formatada (ex: "A sua média final é: 8.5").
+
+14: Escreva um programa que solicite ao usuário o seu peso (em kg) e sua altura (em metros). Em seguida, calcule o IMC usando a fórmula $IMC = peso / (altura * altura)$ e imprima o resultado.
