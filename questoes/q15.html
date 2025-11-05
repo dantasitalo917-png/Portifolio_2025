@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 15 - Cálculo de Porcentagem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="main" class="h-screen flex items-center justify-center">
+        <form 
+            class="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            id="meuForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="valorTotal">
+                    Valor Total (ex: 200)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="valorTotal" step="0.01" required>
+            </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="percentual">
+                    Percentual (apenas o número, ex: 25)
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+                type="number" id="percentual" step="0.01" required>
+            </div>
+            
+            <div class="flex items-center justify-center">
+                <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Calcular">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("meuForm").addEventListener("submit", function (e){
+            e.preventDefault();
+
+            // Recupera os inputs
+            let valorTotalInput = document.getElementById("valorTotal");
+            let percentualInput = document.getElementById("percentual");
+            
+            // Acessa os valores
+            let valorTotal = parseFloat(valorTotalInput.value);
+            let percentual = parseFloat(percentualInput.value);
+
+            // Calcula a porcentagem ( (valor * %) / 100 )
+            let resultado = (valorTotal * percentual) / 100;
+
+            // Remove o formulário
+            document.getElementById("meuForm").remove();
+
+            // adicionando o resultado
+            document.getElementById("main").innerHTML = `
+            <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col'>
+                <h1 class='font-bold text-xl mb-3'>Resultado da Porcentagem</h1>
+                               <p><strong>${percentual}%</strong> de <strong>R$ ${valorTotal.toFixed(2)}</strong> é <strong>R$ ${resultado.toFixed(2)}</strong></p>
+            </div>
+            `;
+        });
+   t</script>
+</body>
+</html>
