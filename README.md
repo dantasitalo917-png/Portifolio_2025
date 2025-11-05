@@ -24,4 +24,7 @@
 
 13: Escreva um programa que peça ao usuário para inserir duas notas (de 0 a 10) em campos separados. Após o envio, o formulário deve ser removido, e a página deve exibir a média simples entre as duas notas em uma mensagem formatada (ex: "A sua média final é: 8.5").
 
-14: Escreva um programa que solicite ao usuário o seu peso (em kg) e sua altura (em metros). Em seguida, calcule o IMC usando a fórmula $IMC = peso / (altura * altura)$ e imprima o resultado.
+14: Escreva um programa que solicite ao usuário sua nota (de 0 a 10) e verifique se ele está Aprovado (nota ≥ 7), em Recuperação (nota ≥ 4 e < 7) ou Reprovado (nota < 4). Em seguida, exiba a mensagem correspondente.
+
+15: Escreva um programa que solicite ao usuário um número e verifique se ele é positivo, negativo ou zero.
+Em seguida, exiba uma mensagem informando o resultado.
