@@ -29,9 +29,11 @@
         document.getElementById("meuForm").addEventListener("submit", function (e){
             e.preventDefault();
 
+            //acessando e conventendo o número e acessando resultado.
             let numero = parseFloat(document.getElementById("numero").value);
             let resultado;
 
+            //calculando
             if (numero > 0) {
                 resultado = "O número é positivo.";
             } else if (numero < 0) {
@@ -40,8 +42,10 @@
                 resultado = "O número é zero.";
             }
 
+            // Removendo o formulário da tela
             document.getElementById("meuForm").remove();
 
+            // Resultado
             document.getElementById("main").innerHTML = `
             <div class='min-w-80 bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col text-center'>
                 <h1 class='font-bold text-xl mb-3'>Resultado</h1>
