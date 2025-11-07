@@ -28,3 +28,5 @@
 
 15: Escreva um programa que solicite ao usuário um número e verifique se ele é positivo, negativo ou zero.
 Em seguida, exiba uma mensagem informando o resultado.
+
+Só não consegui fazer as três ultimas de vetores, fiz a 1 e 2.
