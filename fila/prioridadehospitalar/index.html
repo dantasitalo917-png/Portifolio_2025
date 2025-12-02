@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Triagem Hospitalar</h1>
+    <p>Adicione pacientes conforme a gravidade.</p>
+    
+    <label>Nome do Paciente:</label><br>
+    <input type="text" id="nome" placeholder="">
+    <br>
+    <label>Nivel de Prioridade:</label><br>
+    <select id="prioridade">
+        <option value="1">1 -Leve (normal)</option>
+        <option value="3">3 -Urgente (febre/Dor)</option>
+        <option value="5">5 -Emergência (Grave)</option>
+    </select>
+    <br>
+    <button onclick="adicionarPaciente()">Adicionar à Fila</button>
+    <button onclick="chamarPaciente()">Chamar Próximo</button>
+</body>
+</html>
