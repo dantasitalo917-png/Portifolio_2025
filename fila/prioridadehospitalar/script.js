@@ -4,6 +4,7 @@ function adicionarPaciente() {
     // pega os valores do html
     let nome = document.getElementById('nome').value;
     let prioridade = parseInt(document.getElementById('prioridade').value);
+    
     if (nome === "") {
         alert("por favor digite o nome do paciente.");
         return;
