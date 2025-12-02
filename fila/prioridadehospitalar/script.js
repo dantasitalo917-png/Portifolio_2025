@@ -15,3 +15,7 @@ function adicionarPaciente() {
     document.getElementById('nome').value ="";
     atualizarListaNaTela();
 }
+
+function chamarPaciente() {
+    
+}
