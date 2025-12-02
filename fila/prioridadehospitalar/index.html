@@ -19,7 +19,18 @@
         <option value="5">5 -Emergência (Grave)</option>
     </select>
     <br>
-    <button onclick="adicionarPaciente()">Adicionar à Fila</button>
+    <button onclick="adicionarPaciente()">Adicionar a Fila</button>
     <button onclick="chamarPaciente()">Chamar Próximo</button>
+
+    <h3 id="mensagem-atendimento" style="color: blue;"></h3>
+
+    <div class="fila-container">
+        <b>Fila de Espera:</b>
+        <ul id="lista-visual" style="padding-left: 0;">
+
+        </ul>
+    </div>
+    <script src="queue.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
