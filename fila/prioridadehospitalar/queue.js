@@ -45,40 +45,9 @@ class PriorityQueue {
     return this.items.shift(); // Remove e retorna o primeiro nó
   }
 
-  // Método para ver o primeiro elemento da fila (peek)
-  peek() {
-    if (this.isEmpty()) {
-      return 'A fila está vazia';
-    }
-    return this.items[0]; // Retorna o nó com maior prioridade
-  }
-
   // Método para verificar se a fila está vazia
   isEmpty() {
     return this.items.length === 0;
   }
-
-  // Método para verificar o tamanho da fila
-  size() {
-    return this.items.length;
-  }
-
-  // Método para limpar a fila
-  clear() {
-    this.items = [];
-  }
 }
 
-// Exemplo de uso da Fila de Prioridade
-const filaPrioridade = new PriorityQueue();
-
-// Adicionando elementos com prioridade
-filaPrioridade.enqueue('Paciente A', 2); // Prioridade 2
-filaPrioridade.enqueue('Paciente B', 5); // Prioridade 5
-filaPrioridade.enqueue('Paciente C', 1); // Prioridade 1
-filaPrioridade.enqueue('Paciente D', 3); // Prioridade 3
-
-console.log(filaPrioridade.peek()); // Output: { value: 'Paciente B', priority: 5 }
-console.log(filaPrioridade.dequeue()); // Output: { value: 'Paciente B', priority: 5 }
-console.log(filaPrioridade.peek()); // Output: { value: 'Paciente D', priority: 3 }
-console.log(filaPrioridade.size()); // Output: 3
