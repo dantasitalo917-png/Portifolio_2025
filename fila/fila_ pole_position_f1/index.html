@@ -6,6 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="painel">
+        <h1>Grid de Largada</h1>
+        <p>insira o piloto e o tempo da volta</p>
+        
+        <label>Piloto:</label><br>
+        <input type="text" id="piloto" placeholder="">
+        <br>
+        
+        <label>Tempo em segundos: </label><br>
+        <input type="number" id="tempo" step="0.001" placeholder="">
+        <br>
+        <button onclick="registrarVolta()">Registrar Volta</button>
+        <button onclick="largarCarro()" style="background-color: green;">Largar Próximo</button>
+        <h3 id="msg-largada" style="color: green;"></h3>
+        
+        <div class="grid-box">
+            <b>Posições Atuais: </b>
+            <ul id="lista-grid" style="padding-left: 0;"></ul>
+        </div>
+    </div>
+    <script src="f1-queue.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
