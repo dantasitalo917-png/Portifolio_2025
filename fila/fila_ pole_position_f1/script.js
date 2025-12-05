@@ -34,3 +34,22 @@ function largarCarro() {
         "Largou: "+ carro.nome + " (" + carro.tempo + "s)";
     atualizarGrid();
 }
+
+function atualizarGrid() {
+    let lista = document.getElementById('lista-grid');
+    lista.innerHTML = "";
+
+    let carros = gridF1.items;
+    for (let i = 0; i < carros.length; i++) {
+        let c = carros[i];
+        
+        let item = document.createElement('li');
+        // mostra a posição i+1 nome e tempo
+        item.innerHTML = `
+            <span>${i + 1}: ${c.nome}</span>
+            <span>${c.tempo}s</span>
+        `;
+        
+        lista.appendChild(item);
+    }
+}
