@@ -22,5 +22,15 @@ function registrarVolta() {
 }
 
 function largarCarro() {
+    if (gridF1.isEmpty()) {
+        alert("O Grid está vazio!");
+        return;
+    }
 
+    // Remove o primeiro a pole position
+    let carro = gridF1.dequeue();
+    
+    document.getElementById('msg-largada').innerText = 
+        "Largou: "+ carro.nome + " (" + carro.tempo + "s)";
+    atualizarGrid();
 }
